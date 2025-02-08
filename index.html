@@ -803,69 +803,75 @@
 
         </div>
 
-        <form id="contact-Form" method="POST" action="#">
-          <div class="form-wrapper">
-            <label for="name" class="form-label">Name</label>
-            <div class="input-wrapper">
-              <input type="text" name="name" id="name" required placeholder="e.g Shihab Ahmed" class="input-field">
-              <ion-icon name="person-circle"></ion-icon>
-            </div>
-          </div>
-        
-          <div class="form-wrapper">
-            <label for="email" class="form-label">Email</label>
-            <div class="input-wrapper">
-              <input type="email" name="email" id="email" required placeholder="your-email@gmail.com" class="input-field">
-              <ion-icon name="mail"></ion-icon>
-            </div>
-          </div>
-        
-          <div class="form-wrapper">
-            <label for="phone" class="form-label">Phone</label>
-            <div class="input-wrapper">
-              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field">
-              <ion-icon name="call"></ion-icon>
-            </div>
-          </div>
-        
-          <div class="form-wrapper">
-            <label for="message" class="form-label">Message</label>
-            <div class="input-wrapper">
-              <textarea name="message" id="message" required placeholder="Write message..." class="input-field"></textarea>
-              <ion-icon name="chatbubbles"></ion-icon>
-            </div>
-          </div>
-        
-          <button type="submit" class="btn btn-primary">Send</button>
-        </form>
-        
-        <script>
-          document.getElementById("contact-Form").addEventListener("submit", async function(event) {
-            event.preventDefault(); // ফর্ম রিলোড বন্ধ রাখার জন্য
-        
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const message = document.getElementById("message").value;
-        
-            try {
-              const response = await fetch("http://localhost:5000/send-email", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, phone, message })
-              });
-        
-              const result = await response.json();
-              alert(result.message); // রেসপন্স দেখানোর জন্য
-            } catch (error) {
-              console.error("Error:", error);
-              alert("Failed to send message.");
-            }
-          });
-        </script>
-        
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="1c2db2c3-d073-4439-838a-0dd2ce65f777">
 
-     
+          <div class="form-wrapper">
+
+            <label for="name" class="form-label">Name</label>
+
+            <div class="input-wrapper">
+
+              <input type="text" name="name" id="name" required placeholder="e.g Shihab Ahmed" class="input-field">
+
+              <ion-icon name="person-circle"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <div class="form-wrapper">
+
+            <label for="email" class="form-label">Email</label>
+
+            <div class="input-wrapper">
+
+              <input type="email" name="email" id="email" required placeholder="mdkhanahmed233@gmail.com"
+                class="input-field">
+
+              <ion-icon name="mail"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <div class="form-wrapper">
+
+            <label for="phone" class="form-label">Phone</label>
+
+            <div class="input-wrapper">
+
+              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field">
+
+              <ion-icon name="call"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <div class="form-wrapper">
+
+            <label for="message" class="form-label">Message</label>
+
+            <div class="input-wrapper">
+
+              <textarea name="message" id="message" required placeholder="Write message..."
+                class="input-field"></textarea>
+
+              <ion-icon name="chatbubbles"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send</button>
+
+        </form>
+
+      </section>
+
+    </article>
+  </main>
 
 
 
